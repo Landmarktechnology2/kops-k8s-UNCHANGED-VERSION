@@ -141,3 +141,52 @@ sh -i ~/.ssh/id_rsa ubuntu@ipAddress
 ssh -i ~/.ssh/id_rsa ubuntu@3.90.203.23
   
 ``
+## my command run to get it done
+ 1  sudo apt update -y 
+    2  sudo apt install unzip wget -y 
+    3  sudo curl https://s3.amazonaws.com/aws-cli/awscli-bundle.zip -o awscli-bundle.zip 
+    4  sudo apt install unzip python -y 
+    5  sudo apt install unzip python-is-python2 -y
+    6  sudo apt install unzip python-is-python3 -y
+    7  sudo unzip awscli-bundle.zip 
+    8  sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws 
+    9  sudo apt install wget -y 
+   10  sudo wget https://github.com/kubernetes/kops/releases/download/v1.22.0/kops-linux-amd64 
+   11  sudo chmod +x kops-linux-amd64 
+   12  sudo mv kops-linux-amd64 /usr/local/bin/kops 
+   13  sudo curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl 
+   14  sudo chmod +x ./kubectl 
+   15  sudo mv ./kubectl /usr/local/bin/kubectl 
+   16  aws s3 ls
+   17  ls
+   18  sudo apt install awscli-bundle
+   19  curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl" 
+   20  curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256"
+   21  echo "$(cat kubectl.sha256)  kubectl" | sha256sum --check 
+   22  sudo chmod +x ./kubectl 
+   23  sudo mv ./kubectl /usr/local/bin/kubectl 
+   24  kubectl version --client 
+   25  aws s3 ls
+   26  sudo ./aws/install 
+   27  ls
+   28  sudo ./awscli-bundle/install 
+   29  sudo apt install unzip python-is-python3 -y 
+   30  sudo apt install unzip wget -y 
+   31  curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" 
+   32  sudo unzip awscliv2.zip 
+   33  ls
+   34  sudo ./aws/install 
+   35  aws --version 
+   36  kops
+   37  kops version
+   38  kubectl
+   39  kubectl version
+   40  aws s3 ls
+   41  aws s3 mb s3://devops-ahmed
+   42  aws s3 ls
+   43  vi .bashrc 
+   44  source .bashrc 
+   45  ssh-keygen 
+   46  kops create cluster --zones us-east-2a --networking weave --master-size t2.medium --master-count 1 --node-size t2.medium --node-count=2 ${NAME} 
+   47  kops update cluster --name devops-ahmed.k8s.local --yes --admin 
+   48  history
