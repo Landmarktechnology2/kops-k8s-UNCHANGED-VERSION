@@ -29,9 +29,24 @@
  sudo su - kops
  ```
  ##  2a) install AWSCLI using the apt package manager
-  ```sh
- sudo apt install awscli -y 
- ```
+  # Update system
+sudo apt-get update
+
+# Install required packages
+sudo apt-get install -y unzip curl
+
+# Download the AWS CLI v2 installer
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+
+# Unzip the package
+unzip awscliv2.zip
+
+# Run the installer
+sudo ./aws/install
+
+# Verify installation
+aws --version
+
  ## or 2b) install AWSCLI using the script below
  ```sh
  sudo apt update -y
