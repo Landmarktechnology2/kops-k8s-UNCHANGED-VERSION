@@ -57,10 +57,20 @@ aws --version
  sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
  ```
 ## 3) Install kops software on an ubuntu instance by running the commands below:
- 	sudo apt install wget -y
- 	sudo wget https://github.com/kubernetes/kops/releases/download/v1.22.0/kops-linux-amd64
- 	sudo chmod +x kops-linux-amd64
- 	sudo mv kops-linux-amd64 /usr/local/bin/kops
+ 	# Download and install the latest kops
+curl -Lo kops https://github.com/kubernetes/kops/releases/download/$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d '"' -f 4)/kops-linux-amd64
+chmod +x kops
+sudo mv kops /usr/local/bin/kops
+
+# (Optional) Install kubectl
+curl -Lo kubectl https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl
+chmod +x kubectl
+sudo mv kubectl /usr/local/bin/kubectl
+
+# Verify versions
+kops version
+kubectl version --client
+
  
 ## 4) Install kubectl kubernetes client if it is not already installed
 ```sh
